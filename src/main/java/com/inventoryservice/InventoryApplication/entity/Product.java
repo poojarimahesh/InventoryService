@@ -1,20 +1,31 @@
 package com.inventoryservice.InventoryApplication.entity;
 
+import org.hibernate.validator.constraints.Length;
 import org.springframework.stereotype.Component;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.validation.constraints.Digits;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 
 @Component
 @Entity
 public class Product {
 	
 	@Id
+	
+//	@NotNull(message = "ProductId cannot be null")
 	private long productId;
 	private String productName;
 	private String modelName;
 	private String brandName;
 	private long price;
+//	@Digits(fraction = 0, integer = 100)
+//	@Min(value = 1)
+//	@NotNull
 	private long quantity;
 	
 	

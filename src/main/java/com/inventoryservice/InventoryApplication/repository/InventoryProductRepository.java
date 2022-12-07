@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 import com.inventoryservice.InventoryApplication.entity.Product;
 
 @Repository
-public interface InventoryRepository extends JpaRepository<Product, Long>{
+public interface InventoryProductRepository extends JpaRepository<Product, Long>{
 	
 
 }
