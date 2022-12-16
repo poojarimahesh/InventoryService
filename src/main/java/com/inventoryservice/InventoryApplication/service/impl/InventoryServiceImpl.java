@@ -280,17 +280,6 @@ public class InventoryServiceImpl implements InventoryService{
 	}
 	
 
-//	This method will filter based on ModelName
-//	1 : Creates a temporary List and store all the Products having modelName same as the passed modelName
-//	2 : Return the temporaryList which stores all filtered Product List
-
-	@Override
-	public List<Product> filterByModelName(List<Product> listOfProduct, String modelName) {
-		List<Product> resultList = new ArrayList<>();
-		resultList=listOfProduct.stream().filter(productIterator -> (productIterator.getModelName().trim().equals(modelName.trim()))).collect(Collectors.toList());
-		return resultList;
-	}
-	
 
 //	This method will filter based on BrandName
 //	1 : Creates a temporary List and store all the Products having brandName same as the passed brandName
@@ -317,6 +306,17 @@ public class InventoryServiceImpl implements InventoryService{
 
 	
 
+//	This method will filter based on ModelName
+//	1 : Creates a temporary List and store all the Products having modelName same as the passed modelName
+//	2 : Return the temporaryList which stores all filtered Product List
+
+	@Override
+	public List<Product> filterByModelName(List<Product> listOfProduct, String modelName) {
+		List<Product> resultList = new ArrayList<>();
+		resultList=listOfProduct.stream().filter(productIterator -> (productIterator.getModelName().trim().equals(modelName.trim()))).collect(Collectors.toList());
+		return resultList;
+	}
+	
 	
 
 

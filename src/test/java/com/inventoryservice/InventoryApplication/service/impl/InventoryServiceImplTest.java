@@ -445,49 +445,8 @@ class InventoryServiceImplTest {
 		ResponseEntity<String> expectedResponseEntity = new ResponseEntity<String>("No Sufficient Quantity of Product",HttpStatus.INSUFFICIENT_STORAGE) ;
 		assertEquals(expectedResponseEntity, inventoryServiceImpl.buyProduct(301L, "3", "8ef09efc7c34c02e79611e50c722a042759970c4d0fe8e1ec7e9e48501daf788"));
 	}
-	
-	
-	
-	@Test
-	@DisplayName("filterByPrice_returnFilteredResult")
-	void whenfilterByPrice_thenReturnFilteredResult(){
 		
-		List<Product> productList = new ArrayList<>();
-		productList.add(new Product(301,"Spring boot","This course will help you to understand features of Spring boot","Codeverse",30000,50));
-		productList.add(new Product(302,"Spring MVC","This course will help you to understand features of Spring ","Coding Ninjas",40000,60));
-		productList.add(new Product(303,"Spring Data JPA","This course will help you to understand features of Spring ","Coding Ninjas",50000,50));
-		productList.add(new Product(304,"Spring security","This course will help you to understand features of Spring security","Codeverse",35000,50));
-		productList.add(new Product(305,"Spring","This course will help you to understand features of Spring","Codeverse",10000,50));
-		
-		List<Product> expectedListOfProducts = new ArrayList<>();
-		expectedListOfProducts.add(new Product(301,"Spring boot","This course will help you to understand features of Spring boot","Codeverse",30000,50));
-		expectedListOfProducts.add(new Product(304,"Spring security","This course will help you to understand features of Spring security","Codeverse",35000,50));
-		expectedListOfProducts.add(new Product(305,"Spring","This course will help you to understand features of Spring","Codeverse",10000,50));
-		
-		assertEquals(expectedListOfProducts.toString(),inventoryServiceImpl.filterByPrice(productList,"35000").toString());
-	
-	}
-	
 
-	@Test
-	@DisplayName("filterByModelName_returnFilteredResult")
-	void whenfilterByModelName_thenReturnFilteredResult(){
-		
-		List<Product> productList = new ArrayList<>();
-		productList.add(new Product(301,"Spring boot","This course will help you to understand features of Spring boot","Codeverse",30000,50));
-		productList.add(new Product(302,"Spring MVC","This course will help you to understand features of Spring ","Coding Ninjas",40000,60));
-		productList.add(new Product(303,"Spring Data JPA","This course will help you to understand features of Spring ","Coding Ninjas",50000,50));
-		productList.add(new Product(304,"Spring security","This course will help you to understand features of Spring security","Codeverse",35000,50));
-		productList.add(new Product(305,"Spring","This course will help you to understand features of Spring","Codeverse",10000,50));
-	
-		List<Product> expectedListOfProducts = new ArrayList<>();
-		expectedListOfProducts.add(new Product(302,"Spring MVC","This course will help you to understand features of Spring ","Coding Ninjas",40000,60));
-		expectedListOfProducts.add(new Product(303,"Spring Data JPA","This course will help you to understand features of Spring ","Coding Ninjas",50000,50));
-		expectedListOfProducts.add(new Product(305,"Spring","This course will help you to understand features of Spring","Codeverse",10000,50));
-		
-		assertEquals(expectedListOfProducts.toString(),inventoryServiceImpl.filterByModelName(productList,"This course will help you to understand features of Spring ").toString());
-	
-	}
 	
 	@Test
 	@DisplayName("filterByBrandName_returnFilteredResult")
@@ -509,6 +468,49 @@ class InventoryServiceImplTest {
 	
 	}
 	
+
+	
+	
+	@Test
+	@DisplayName("filterByPrice_returnFilteredResult")
+	void whenfilterByPrice_thenReturnFilteredResult(){
+		
+		List<Product> productList = new ArrayList<>();
+		productList.add(new Product(301,"Spring boot","This course will help you to understand features of Spring boot","Codeverse",30000,50));
+		productList.add(new Product(302,"Spring MVC","This course will help you to understand features of Spring ","Coding Ninjas",40000,60));
+		productList.add(new Product(303,"Spring Data JPA","This course will help you to understand features of Spring ","Coding Ninjas",50000,50));
+		productList.add(new Product(304,"Spring security","This course will help you to understand features of Spring security","Codeverse",35000,50));
+		productList.add(new Product(305,"Spring","This course will help you to understand features of Spring","Codeverse",10000,50));
+		
+		List<Product> expectedListOfProducts = new ArrayList<>();
+		expectedListOfProducts.add(new Product(301,"Spring boot","This course will help you to understand features of Spring boot","Codeverse",30000,50));
+		expectedListOfProducts.add(new Product(304,"Spring security","This course will help you to understand features of Spring security","Codeverse",35000,50));
+		expectedListOfProducts.add(new Product(305,"Spring","This course will help you to understand features of Spring","Codeverse",10000,50));
+		
+		assertEquals(expectedListOfProducts.toString(),inventoryServiceImpl.filterByPrice(productList,"35000").toString());
+	
+	}
+
+
+	@Test
+	@DisplayName("filterByModelName_returnFilteredResult")
+	void whenfilterByModelName_thenReturnFilteredResult(){
+		
+		List<Product> productList = new ArrayList<>();
+		productList.add(new Product(301,"Spring boot","This course will help you to understand features of Spring boot","Codeverse",30000,50));
+		productList.add(new Product(302,"Spring MVC","This course will help you to understand features of Spring ","Coding Ninjas",40000,60));
+		productList.add(new Product(303,"Spring Data JPA","This course will help you to understand features of Spring ","Coding Ninjas",50000,50));
+		productList.add(new Product(304,"Spring security","This course will help you to understand features of Spring security","Codeverse",35000,50));
+		productList.add(new Product(305,"Spring","This course will help you to understand features of Spring","Codeverse",10000,50));
+	
+		List<Product> expectedListOfProducts = new ArrayList<>();
+		expectedListOfProducts.add(new Product(302,"Spring MVC","This course will help you to understand features of Spring ","Coding Ninjas",40000,60));
+		expectedListOfProducts.add(new Product(303,"Spring Data JPA","This course will help you to understand features of Spring ","Coding Ninjas",50000,50));
+		expectedListOfProducts.add(new Product(305,"Spring","This course will help you to understand features of Spring","Codeverse",10000,50));
+		
+		assertEquals(expectedListOfProducts.toString(),inventoryServiceImpl.filterByModelName(productList,"This course will help you to understand features of Spring ").toString());
+	
+	}
 	
 	
 }
